@@ -74,7 +74,7 @@ Sau khi phát hiện tấn công, hệ thống sẽ gửi cảnh báo và chặn
 ![image](https://github.com/user-attachments/assets/1c76eed3-2b6a-43ff-a5cf-9d0ce6013637)
 
 ## Xây dựng Docker
-### **Lưu ý**: Việc build docker sẽ chỉ có thể sử dụng để phát hiện DDOS, không thể chặn ip bằng pfSense được
+### **Lưu ý**: Việc build docker sẽ chỉ có thể sử dụng để phát hiện DDoS, không thể chặn ip bằng pfSense được
 Nếu bạn muốn thì chúng tôi cũng đã có sẵn một `Dockerfile` để bạn có thể build
 hoặc bạn có thể tải container đã được build sẵn [tại đây](https://hub.docker.com/repository/docker/ch1ll9uy/ddos_detector)
 ```
