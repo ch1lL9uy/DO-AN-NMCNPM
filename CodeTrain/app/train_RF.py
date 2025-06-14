@@ -4,7 +4,6 @@ from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import joblib
 
-# Danh sách 12 đặc trưng đã chọn 
 features = [
     "Flow ID",
     "Source IP",
@@ -22,7 +21,7 @@ features = [
 
 label_col = "Label"
 
-df = pd.read_csv(r"G:\CodeTrainDDoSUDP\CodeTrainDDoSUDP\data\DrDoS_UDP.csv")
+df = pd.read_csv("/data/DrDoS_UDP.csv")
 df = df[features + ["Label"]]
 X = df[features]
 y = df["Label"]
@@ -42,10 +41,8 @@ grid_search = GridSearchCV(
 )
 grid_search.fit(X_train, y_train)
 
-# Mô hình tốt nhất
 best_model = grid_search.best_estimator_
 
-# Dự đoán và đánh giá
 y_pred = best_model.predict(X_test)
 
 print("\nBest Parameters:", grid_search.best_params_)
@@ -54,6 +51,5 @@ print(f"Precision: {precision_score(y_test, y_pred):.4f}")
 print(f"Recall   : {recall_score(y_test, y_pred):.4f}")
 print(f"F1-Score : {f1_score(y_test, y_pred):.4f}")
 
-# Lưu mô hình
-joblib.dump(best_model, "random_forest_ddos_best.pkl")
-print("Mô hình đã được lưu: random_forest_ddos_best.pkl")
+joblib.dump(best_model, "random_forest_DrDoS_UDP.pkl")
+print("Mô hình đã được lưu: random_forest_DrDoS_UDP.pkl")
