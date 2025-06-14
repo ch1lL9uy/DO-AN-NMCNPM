@@ -48,7 +48,7 @@ best_model = grid_search.best_estimator_
 # Dự đoán và đánh giá
 y_pred = best_model.predict(X_test)
 
-print("\n🔍 Best Parameters:", grid_search.best_params_)
+print("\nBest Parameters:", grid_search.best_params_)
 print(f"Accuracy : {accuracy_score(y_test, y_pred):.4f}")
 print(f"Precision: {precision_score(y_test, y_pred):.4f}")
 print(f"Recall   : {recall_score(y_test, y_pred):.4f}")
